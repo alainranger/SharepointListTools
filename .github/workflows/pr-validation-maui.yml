@@ -1,0 +1,43 @@
+name: SharePoint List Tools Pull Request Validation - .NET MAUI
+
+on:
+  pull_request:
+    branches:
+      - '**'
+    paths:
+      - 'SharepointListTools.BlazorMaui/**'
+      - 'SharepointListTools.BlazorMaui.UnitTests/**'
+      - '.github/workflows/pr-validation-maui.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'SharepointListTools.BlazorMaui/**'
+      - 'SharepointListTools.BlazorMaui.UnitTests/**'
+      - '.github/workflows/pr-validation-maui.yml'
+
+jobs:  
+  test:
+    runs-on: windows-latest    
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup .NET (global.json)
+        uses: actions/setup-dotnet@v3
+
+      - name: Update Workloads
+        run: dotnet workload update
+
+      - name: Install Workloads
+        shell: pwsh
+        run: |
+          dotnet workload install android
+          dotnet workload install ios
+          dotnet workload install maccatalyst
+          dotnet workload install maui
+
+      - name: Build 
+        run: dotnet build SharepointListTools.BlazorMaui/SharepointListTools.BlazorMaui.csproj
+
+      # Uncomment when test avaible.
+      #- name: Test
+      #  run: dotnet test tests/ClientApp.UnitTests/ClientApp.UnitTests.csproj
