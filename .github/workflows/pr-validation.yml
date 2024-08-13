@@ -24,6 +24,6 @@ jobs:
       - name: Setup .NET (global.json)
         uses: actions/setup-dotnet@v3     
       - name: Build 
-        run: dotnet build SharepointListTools/SharepointListTools.Core/SharepointListTools.Core.csproj
+        run: dotnet build SharepointListTools.Core/SharepointListTools.Core.csproj
       #- name: Test
       #  run: dotnet test SharepointListTools.sln
