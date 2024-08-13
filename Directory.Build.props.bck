@@ -1,17 +1,21 @@
 <Project>
-  <PropertyGroup>
-    <AnalysisLevel>latest</AnalysisLevel>
-    <AnalysisMode>all</AnalysisMode>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
-    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-  </PropertyGroup>
-  <ItemGroup>
-    <PackageReference
-      Include="SonarAnalyzer.CSharp"
-      Version="9.31.0.96804"
-      PrivateAssets="all"
-      Condition="$(MSBuildProjectExtension) == '.csproj'"
-    />
-  </ItemGroup>
+	<PropertyGroup>
+		<TargetFramework>8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<AnalysisLevel>latest</AnalysisLevel>
+		<AnalysisMode>all</AnalysisMode>
+		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+		<CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
+		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference
+			Include="SonarAnalyzer.CSharp"
+			Version="9.31.0.96804"
+			PrivateAssets="all"
+			IncludeAddests="runtime; build; native; contentfiles; analysers; buildtransitive"
+			Condition="$(MSBuildProjectExtension) == '.csproj'" />
+	</ItemGroup>
 </Project>
