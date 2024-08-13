@@ -1,4 +1,4 @@
-name: eShop Pull Request Validation
+name: SharePoint List Tools Pull Request Validation
 
 on:
   pull_request:
@@ -28,6 +28,6 @@ jobs:
       - name: Install Workloads
         run: dotnet workload install aspire
       - name: Build 
-        run: dotnet build eShop.Web.slnf
+        run: dotnet build SharepointListTools.sln
       - name: Test
-        run: dotnet test eShop.Web.slnf
+        run: dotnet test SharepointListTools.sln
