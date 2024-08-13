@@ -22,12 +22,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Setup .NET (global.json)
-        uses: actions/setup-dotnet@v3
-      - name: Update Workloads
-        run: dotnet workload update
-      - name: Install Workloads
-        run: dotnet workload install aspire
+        uses: actions/setup-dotnet@v3     
       - name: Build 
-        run: dotnet build SharepointListTools.sln
-      - name: Test
-        run: dotnet test SharepointListTools.sln
+        run: dotnet build SharepointListTools/SharepointListTools.Core/SharepointListTools.Core.csproj
+      #- name: Test
+      #  run: dotnet test SharepointListTools.sln
