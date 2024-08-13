@@ -8,7 +8,7 @@ updates:
  - package-ecosystem: "nuget"
     directories: 
     - "/SharepointListTools.BlazorMaui"
-    - "SharepointListTools.Core"
+    - "/SharepointListTools.Core"
     schedule:
       intervale: "daily"
       # interval: "weekly"
