@@ -10,8 +10,11 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EB9D6612-D9DD-4B2D-8D48-1FB284518705}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		.github\dependabot.yml = .github\dependabot.yml
 		Directory.Build.props.bck = Directory.Build.props.bck
 		LICENSE = LICENSE
+		.github\workflows\pr-validation-maui.yml = .github\workflows\pr-validation-maui.yml
+		.github\workflows\pr-validation.yml = .github\workflows\pr-validation.yml
 		README.md = README.md
 	EndProjectSection
 EndProject
