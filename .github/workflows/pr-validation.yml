@@ -1,0 +1,29 @@
+name: SharePoint List Tools Pull Request Validation
+
+on:
+  pull_request:
+    paths-ignore:
+      - '**.md'
+      - 'SharepointListTools.BlazorMaui/**'
+      - 'SharepointListTools.BlazorMaui.UnitTests/**'
+      - '.github/workflows/pr-validation-maui.yml'
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '**.md'
+      - 'SharepointListTools.BlazorMaui/**'
+      - 'SharepointListTools.BlazorMaui.UnitTests/**'
+      - '.github/workflows/pr-validation-maui.yml'
+
+jobs:  
+  test:
+    runs-on: ubuntu-latest    
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup .NET (global.json)
+        uses: actions/setup-dotnet@v3     
+      - name: Build 
+        run: dotnet build SharepointListTools.Core/SharepointListTools.Core.csproj
+      #- name: Test
+      #  run: dotnet test SharepointListTools.sln
