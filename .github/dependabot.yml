@@ -4,13 +4,13 @@
 # https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
 
 version: 2
-updates:
+updates: 
  - package-ecosystem: "nuget"
-  directories: 
-   - "/SharepointListTools.BlazorMaui"
-   - "/SharepointListTools.Core"
-  schedule:
-   intervale: "daily"
-   # interval: "weekly"
-   # day: "wednesday"
-  open-pull-requests-limit: 5
+   directories: 
+    - "/SharepointListTools.BlazorMaui"
+    - "/SharepointListTools.Core"
+   schedule:
+    interval: "daily"
+    # interval: "weekly"
+    # day: "wednesday"
+   open-pull-requests-limit: 5
